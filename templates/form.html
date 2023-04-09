@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Football Data Analytics</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/jquery-ui/jquery-ui.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+
+<body>
+
+    <div class="main">
+        
+        <div class="header">
+            <img src="images/header-text.png" alt="">
+            <img src="images/dots.png" alt="">
+        </div>
+        <div class="container">
+            <form action = "submit" id="booking-form" class="booking-form" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <div class="form-destination" >
+                        <label for="destination">Tournament</label>
+                        <div class="dropdown">
+                            <select name="tournamentname" required=""class="dropdown-select">
+                              <option value="">Select tournament</option>
+                              <option value="1">UEFA Champions League</option>
+                              <option value="2">FIFA Men's World Cup 2018</option>
+                              <option value="3">FIFA Women's World Cup 2019</option>
+                              <option value="4">Premier League 20003-04</option>
+                            </select>
+                          </div>
+                    </div>
+
+                    <div class="form-destination">
+                        <label for="destination">Match</label>
+                        <div class="dropdown">
+                            <select name="matchname" required="" class="dropdown-select">
+                              <option value="">Select match</option>
+                              <option value= 7581 >Denmark vs Croatia</option>
+                              <option value= 7549 >Iceland vs Nigeria</option>
+                              <option value= 7555 >Columbia vs Poland</option>
+                              <option value= 7529 >NIgeria  vs Croatia</option>
+                              <option value= 7548 >Costarica vs Brazil</option>
+                              <option value= 7534 >Mexico vs Germany</option>
+                              <option value= 7562 >Peru vs Australia</option>
+                              <option value= 7571 >Colombia vs Senegal</option>
+                              <option value= 7558 >Russia vs Urugya</option>
+                              <option value= 7582 >Peru vs Australia</option>
+                              <option value= 8652 >Croatia vs Russia</option>
+                              <option value= 7547 >Australia vs Denmark</option>
+                              <option value= 8652 >Croatia vs Russia</option>
+                              <option value= 7535 >Serbia vs Costarica</option>
+                              <option value= 7546 >Peru vs France</option>
+                              <option value= 8652 >Croatia vs Russia</option>
+                              <option value= 7584 >Japan vs Belgium</option>
+                              <option value= 7536 >Panama vs Belgium</option>
+                              <option value= 7545 >Croatia vs Argentina</option>
+                              <option value= 7580 >Argentina vs France</option>
+                            </select>
+                          </div>
+                    </div>
+
+                    <div class="form-destination">
+                        <label for="destination">Model</label>
+                        <div class="dropdown" style="width: 200px;">
+                            <select name="modelname" required="" class="dropdown-select">
+                              <option value="">Select model</option>
+                              <option value="1">Shot map</option>
+                              <option value="2">Pass Network</option>
+                              <option value="3">Touches</option>
+                              <option value="4">Pass map</option>
+                            </select>
+                          </div>
+                    </div>
+                    <!-- 
+                    /*
+                    <div>
+                        <label for="date_from">WWW</label>
+                        <section>
+                            <div class="dropdown">
+                              <select name="one" class="dropdown-select">
+                                <option value="">Select…</option>
+                                <option value="1">Option #1</option>
+                                <option value="2">Option #2</option>
+                                <option value="3">Option #3</option>
+                              </select>
+                            </div>
+                             <div class="dropdown dropdown-dark">
+                              <select name="two" class="dropdown-select">
+                                <option value="">Select…</option>
+                                <option value="1">Option #1</option>
+                                <option value="2">Option #2</option>
+                                <option value="3">Option #3</option>
+                              </select>
+                            </div> 
+                          </section>
+                        
+                      </div>
+
+
+                    <div class="form-date-from form-icon">
+                        <label for="date_from">From</label>
+                        <input type="text" id="date_from" class="date_from" placeholder="Pick a date" />
+                         <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span>  
+                         <div class="dropdown">
+                            <select name="one" class="dropdown-select">
+                              <option value="">Select…</option>
+                              <option value="1">Option #1</option>
+                              <option value="2">Option #2</option>
+                              <option value="3">Option #3</option>
+                            </select>
+                          </div>
+                    </div>
+                    
+                     <div class="form-date-to form-icon">
+                        <label for="date_to">To</label>
+                        <input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
+                        <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> 
+                    </div> -->
+                    
+                    <!-- <div class="form-quantity">
+                        <label for="quantity">Quantity</label>
+                        <span class="modify-qty plus" onClick="Tang()"><i class="zmdi zmdi-chevron-up"></i></span>
+                        <input type="number" name="quantity" id="quantity" value="0" min="0" class="nput-text qty text">
+                        <span class="modify-qty minus" onClick="Giam()"><i class="zmdi zmdi-chevron-down"></i></span>
+                    </div> 
+                    */ -->
+                    <div class="form-submit">
+                        <input type="submit" id="submit" class="submit" value="SHOW" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

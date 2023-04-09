@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>Hello World from HTML page by {{name}} with num {{num}} </h1>
+<h2> {{list }} </h2>
+<ul>
+    {% for item in list %} 
+        {% if item == "abc" %}
+            <li>*{{ item|upper }}</li>
+        {% else %}
+            <li>{{ forloop.counter}}- {{item}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<h2>END</h2>
+
+<form action = "add" method="post">
+    {% csrf_token %}
+        
+    Enter num 1 = <input type = "text" name ='num1'><br>
+    Enter num 2 = <input type = "text" name ='num2'><br>
+    <input type = "submit">
+
+</form>
+
+{% endblock %}
+
